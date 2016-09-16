@@ -1,0 +1,7 @@
+#DOM li{
+	border-bottom : 1px solid #303030;
+	padding : 8px;
+}
+#DOM li:last-child{
+	border-bottom : none;
+}
