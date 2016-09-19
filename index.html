@@ -34,7 +34,7 @@
 						console.log(html);
 						jQuery.each(html, function(key, value){
 							console.log(value);
-							DOM.append("<li><h3>" + value.username + "</h3><p>" + value.about_me + "</p></li>");
+							DOM.append("<li><img src=data:image/png;base64," + value.picture + "><h3>" + value.username + "</h3><p>" + value.about_me + "</p></li>");
 						});
 					},
 					error : function(e){
