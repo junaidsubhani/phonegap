@@ -8,18 +8,7 @@
 	
 	$arr = array();
 	
-	$images = array();
 	
-	while ($r = mysqli_fetch_assoc($dataquery)) {
-		$images[] = $r['picture'];
-		
-	}
-	foreach ($images as $image) {
-		echo "<dt><strong>Image:</strong></dt><dd>" . 
-     '<img src="data:image/jpeg;base64,'.
-      base64_encode($image).
-      '" width="290" height="290">' . "</dd>";
-	}
 	
 	$dataquery = mysqli_query($sqlconn, "SELECT * FROM table_users");
 	while($r = mysqli_fetch_object($dataquery)){
