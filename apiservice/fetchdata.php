@@ -8,12 +8,17 @@
 	
 	$arr = array();
 	
-	
-	
 	$dataquery = mysqli_query($sqlconn, "SELECT * FROM table_users");
-	while($r = mysqli_fetch_object($dataquery)){
-		array_push($arr, array("id_users" => $r->id_users, "username" => $r->username, "full_name" => $r->full_name, "about_me" => $r->about_me));
+	
+	while($r = $dataquery->fetch_assoc()){
+		$arr[] = $r;                                                           
 	}
 	
-	print_r(json_encode($arr));
+	foreach($arr as $key=>$value){
+		$newArrData[$key] =  $arr[$key];
+		$newArrData[$key]['picture'] = base64_encode($arr[$key]['picture']);
+		
+	}
+	header('Content-type: application/json');
+	echo json_encode($newArrData);
 ?>
