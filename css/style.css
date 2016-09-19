@@ -5,3 +5,6 @@
 #DOM li:last-child{
 	border-bottom : none;
 }
+#DOM img{
+	width:100px;
+}
